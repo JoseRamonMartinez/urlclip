@@ -26,12 +26,35 @@
     </div>
     <div class="home-bottom-shape"></div>
   </div>
-  <div style="align-items: center; justify-content: center; display: flex">
-    <ion-button (click)="sumarContador()" fill="outline" size="large">Pulsame</ion-button>
-  </div>
-  <div *ngFor="let i of contador">
-    <h1 style="align-items: center; justify-content: center; display: flex">
-      {{ contador }}
-    </h1>
+
+  <div style="padding: 2%">
+    <ion-item no-lines>
+      <ion-label color="primary"><b>Shorten your long URL</b></ion-label>
+    </ion-item>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-input placeholder="https://google.com" type="text" [(ngModel)]="inputURL"></ion-input>
+
+          <ion-buttons item-end>
+            <ion-button fill="solid" color="primary" shape="round" (click)="shortURL(inputURL)">
+              <ion-icon size="large" color="light" name="cut-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let card of URLCards">
+      <ion-card-header>
+        <ion-title>
+          Link Shorted: <a href="{{ card.short_url }}">{{ card.short_url }}</a></ion-title
+        >
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item> <b>Redirect url: </b> {{ card.long_url }} </ion-item>
+        <ion-item> <b>Creation date:</b> {{ card.created_at }} </ion-item>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

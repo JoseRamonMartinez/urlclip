@@ -5,7 +5,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { SharedModule } from '@shared';
 import { HomeComponent } from './home.component';
-import { QuoteService } from './quote.service';
+import { ShortenerService } from './shortener.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -17,7 +17,7 @@ describe('HomeComponent', () => {
         imports: [IonicModule.forRoot(), SharedModule, HttpClientTestingModule],
         schemas: [CUSTOM_ELEMENTS_SCHEMA],
         declarations: [HomeComponent],
-        providers: [QuoteService],
+        providers: [ShortenerService],
       }).compileComponents();
     })
   );
