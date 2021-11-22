@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "build": "npm run write:env -s && ng build  --configuration production",
-    "start": "npm run write:env -s && ng serve --proxy-config proxy.conf.js",
+    "start-dev": "npm run write:env -s && ng serve --proxy-config proxy.conf.js",
     "serve:sw": "npm run build -s && npx http-server ./www -p 4200",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss",
     "test": "npm run write:env -s && ng test",
@@ -25,7 +25,7 @@
     "generate": "ng generate",
     "heroku-build": "npm run write:env -s && ng build  --configuration production",
     "heroku-postbuild": "npm install && npm run heroku-build",
-    "heroku-start": " node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@angular/animations": "^12.1.1",
