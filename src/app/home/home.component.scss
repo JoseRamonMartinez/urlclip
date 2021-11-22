@@ -71,8 +71,14 @@ q {
     background-color: var(--ion-color-primary);
   }
 }
-.circle {
+.home-bottom-shape {
   padding-top: 8%;
   background-image: url("../../assets/circle.png");
   background-size: 33.25% 130%;
+}
+
+.button-short {
+  align-items: right;
+  justify-content: right;
+  display: flex;
 }

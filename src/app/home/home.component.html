@@ -24,6 +24,14 @@
         share with others.</span
       >
     </div>
-    <div class="circle"></div>
+    <div class="home-bottom-shape"></div>
+  </div>
+  <div style="align-items: center; justify-content: center; display: flex">
+    <ion-button (click)="sumarContador()" fill="outline" size="large">Pulsame</ion-button>
+  </div>
+  <div *ngFor="let i of contador">
+    <h1 style="align-items: center; justify-content: center; display: flex">
+      {{ contador }}
+    </h1>
   </div>
 </ion-content>

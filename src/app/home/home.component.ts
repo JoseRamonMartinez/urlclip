@@ -11,6 +11,7 @@ import { QuoteService } from './quote.service';
 export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
+  contador: number[] = [0];
 
   constructor(private quoteService: QuoteService) {}
 
@@ -26,5 +27,9 @@ export class HomeComponent implements OnInit {
       .subscribe((quote: string) => {
         this.quote = quote;
       });
+  }
+
+  sumarContador() {
+    this.contador.push(this.contador[this.contador.length - 1] + 1);
   }
 }
