@@ -15,18 +15,19 @@
 <ion-content>
   <div>
     <div class="cats-div">
-      <span class="home-subtitle">Acortador de URL, acortador de enlaces</span>
+      <span class="home-subtitle" translate>URL shortener, shorts your links</span>
     </div>
     <div class="home-div">
       <span class="home-title"
         ><b
-          >Here you have full <span style="color: var(--ion-color-secondary)">control</span> over your
-          <span style="color: var(--ion-color-secondary)">links</span></b
+          ><span translate>Here you have full</span>
+          <span style="color: var(--ion-color-secondary)" translate>control</span> <span translate>over your</span>
+          <span style="color: var(--ion-color-secondary)" translate>links</span></b
         ></span
       >
-      <span class="home-description"
-        >Link Management Platform with all features you need in one place. Shorten your long links and make easy to
-        share with others.</span
+      <span class="home-description">
+        Link Management Platform with all features you need in one place. Shorten your long links and make easy to share
+        with others.</span
       >
     </div>
     <div class="home-bottom-shape"></div>
@@ -34,7 +35,7 @@
 
   <div style="padding: 2%">
     <ion-item no-lines>
-      <ion-label color="primary"><b>Shorten your long URL</b></ion-label>
+      <ion-label color="primary"><b translate>Shorten your long URL</b></ion-label>
     </ion-item>
 
     <ion-card>
@@ -71,7 +72,10 @@
             </ion-button>
           </ion-buttons>
         </ion-item>
-        <ion-item lines="none"> <b>Redirect url:</b>&nbsp; {{ card.long_url }} </ion-item>
+        <ion-item lines="none">
+          <b><span translate>Redirect url:</span></b
+          >&nbsp; {{ card.long_url }}
+        </ion-item>
         <ion-item lines="none">
           <b>Creation date:</b>&nbsp; {{ card.created_at * 1000 | date: 'dd/MM/yyyy, hh:mm' }}
         </ion-item>

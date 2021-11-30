@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment';
 import { ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs/operators';
 import { ShortenerService } from './shortener.service';
 
@@ -22,7 +23,11 @@ export class HomeComponent implements OnInit {
   inputURL: any = '';
   URLCards: URLCard[] = [];
 
-  constructor(private shortenerService: ShortenerService, public toastController: ToastController) {}
+  constructor(
+    private shortenerService: ShortenerService,
+    public toastController: ToastController,
+    private translateService: TranslateService
+  ) {}
 
   ngOnInit() {}
 
