@@ -21,7 +21,9 @@
     "cordova:build": "ngx-scripts cordova build --device --release --copy dist",
     "cordova:clean": "ngx-scripts clean",
     "cordova": "cordova",
-    "generate": "ng generate"
+    "generate": "ng generate",
+    "postinstall": "npm run write:env -s && ng build --configuration production",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript"
   },
   "dependencies": {
     "@angular/animations": "^12.1.1",
