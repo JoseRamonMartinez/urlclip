@@ -25,7 +25,7 @@
           <span style="color: var(--ion-color-secondary)" translate>links</span></b
         ></span
       >
-      <span class="home-description">
+      <span class="home-description" translate>
         Link Management Platform with all features you need in one place. Shorten your long links and make easy to share
         with others.</span
       >
@@ -77,7 +77,8 @@
           >&nbsp; {{ card.long_url }}
         </ion-item>
         <ion-item lines="none">
-          <b>Creation date:</b>&nbsp; {{ card.created_at * 1000 | date: 'dd/MM/yyyy, hh:mm' }}
+          <b><span translate>Creation date:</span></b
+          >&nbsp; {{ card.created_at * 1000 | date: 'dd/MM/yyyy, hh:mm' }}
         </ion-item>
       </ion-card-content>
     </ion-card>
