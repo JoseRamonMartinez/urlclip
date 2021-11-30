@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="primary">
+      <ion-button>
+        <app-language-selector></app-language-selector>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <img width="25px" src="../../assets/ngx-rocket-logo.png" />
+      <span translate>URLCLIP</span></ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div class="cats-div">
+      <span class="home-subtitle">Acortador de URL, acortador de enlaces</span>
+    </div>
+    <div class="home-div">
+      <span class="home-title"
+        ><b
+          >Here you have full <span style="color: var(--ion-color-secondary)">control</span> over your
+          <span style="color: var(--ion-color-secondary)">links</span></b
+        ></span
+      >
+      <span class="home-description"
+        >Link Management Platform with all features you need in one place. Shorten your long links and make easy to
+        share with others.</span
+      >
+    </div>
+    <div class="home-bottom-shape"></div>
+  </div>
+
+  <div style="padding: 2%">
+    <ion-item no-lines>
+      <ion-label color="primary"><b>Shorten your long URL</b></ion-label>
+    </ion-item>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-input
+            placeholder="https://google.com"
+            type="text"
+            (keyup.enter)="shortURL(inputURL)"
+            [(ngModel)]="inputURL"
+          ></ion-input>
+          <ion-buttons item-end>
+            <ion-button fill="solid" color="primary" shape="round" (click)="shortURL(inputURL)">
+              <ion-icon size="large" color="light" name="cut-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
+    <ion-card *ngFor="let card of URLCards.reverse()">
+      <ion-card-header color="primary">
+        <ion-item color="primary" lines="none">
+          <h2>{{ card.hostname }}</h2>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <a href="{{ card.short_url }}">{{ card.short_url }}</a>
+          <ion-buttons item-end>
+            <ion-button (click)="copyURL(card.short_url)">
+              <ion-icon size="large" color="primary" name="copy-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        <ion-item lines="none"> <b>Redirect url:</b>&nbsp; {{ card.long_url }} </ion-item>
+        <ion-item lines="none">
+          <b>Creation date:</b>&nbsp; {{ card.created_at * 1000 | date: 'dd/MM/yyyy, hh:mm' }}
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
