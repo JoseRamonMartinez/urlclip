@@ -13,7 +13,7 @@ export class Shell {
    */
   static childRoutes(routes: Routes): Route {
     return {
-      path: 'tabs',
+      path: '',
       component: ShellComponent,
       children: routes,
     };

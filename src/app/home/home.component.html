@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <app-language-selector></app-language-selector>
+      </ion-button>
     </ion-buttons>
-    <ion-title><span translate>Home</span></ion-title>
+    <ion-title><span translate>URLCLIP</span></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -35,8 +37,12 @@
     <ion-card>
       <ion-card-content>
         <ion-item>
-          <ion-input placeholder="https://google.com" type="text" [(ngModel)]="inputURL"></ion-input>
-
+          <ion-input
+            placeholder="https://google.com"
+            type="text"
+            (keyup.enter)="shortURL(inputURL)"
+            [(ngModel)]="inputURL"
+          ></ion-input>
           <ion-buttons item-end>
             <ion-button fill="solid" color="primary" shape="round" (click)="shortURL(inputURL)">
               <ion-icon size="large" color="light" name="cut-outline"></ion-icon>
@@ -45,15 +51,27 @@
         </ion-item>
       </ion-card-content>
     </ion-card>
-    <ion-card *ngFor="let card of URLCards">
-      <ion-card-header>
-        <ion-title>
-          Link Shorted: <a href="{{ card.short_url }}">{{ card.short_url }}</a></ion-title
-        >
+
+    <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
+    <ion-card *ngFor="let card of URLCards.reverse()">
+      <ion-card-header color="primary">
+        <ion-item color="primary" lines="none">
+          <h2>{{ card.hostname }}</h2>
+        </ion-item>
       </ion-card-header>
       <ion-card-content>
-        <ion-item> <b>Redirect url: </b> {{ card.long_url }} </ion-item>
-        <ion-item> <b>Creation date:</b> {{ card.created_at }} </ion-item>
+        <ion-item>
+          <a href="{{ card.short_url }}">{{ card.short_url }}</a>
+          <ion-buttons item-end>
+            <ion-button (click)="copyURL(card.short_url)">
+              <ion-icon size="large" color="primary" name="copy-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        <ion-item lines="none"> <b>Redirect url:</b>&nbsp; {{ card.long_url }} </ion-item>
+        <ion-item lines="none">
+          <b>Creation date:</b>&nbsp; {{ card.created_at * 1000 | date: 'dd/MM/yyyy, hh:mm' }}
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </div>
