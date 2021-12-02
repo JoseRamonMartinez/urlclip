@@ -4,13 +4,8 @@ import { ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs/operators';
 import { ShortenerService } from './shortener.service';
-
-interface URLCard {
-  hostname: string;
-  long_url: string;
-  short_url: string;
-  created_at: number;
-}
+import { URLCard } from './cards.model';
+import { CardsLocalStorageService } from './cardslocalstorage.service';
 
 @Component({
   selector: 'app-home',
@@ -25,32 +20,45 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private shortenerService: ShortenerService,
+    private cardslocalstorageService: CardsLocalStorageService,
     public toastController: ToastController,
     private translateService: TranslateService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.URLCards = this.cardslocalstorageService.getCards();
+  }
 
   shortURL(url: string) {
     this.isLoading = true;
     try {
       this.shortenerService.postURL(url).subscribe((result: any) => {
         this.isLoading = false;
-        this.URLCards.push({
+        let card: URLCard = {
           hostname: result.url.match(
             /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/
           )[3],
           long_url: result.url,
           short_url: environment.serverUrl + '/' + result.code,
           created_at: result.created_at,
-        });
+        };
+
+        this.URLCards.push(card);
         this.toastSuccess();
+        this.cardslocalstorageService.saveCard(card);
         this.inputURL = '';
       });
     } finally {
       this.isLoading = false;
       this.toastFails();
     }
+  }
+
+  deleteCard(card: URLCard) {
+    this.URLCards.forEach((element, index) => {
+      if (element == card) this.URLCards.splice(index, 1);
+    });
+    this.cardslocalstorageService.removeCard(card);
   }
 
   toastSuccess() {
