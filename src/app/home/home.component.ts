@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   isLoading = false;
   inputURL: any = '';
   URLCards: URLCard[] = [];
+  URLCardsCopy: URLCard[] = [];
+  sortButton: boolean = true;
 
   constructor(
     private shortenerService: ShortenerService,
@@ -27,6 +29,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.URLCards = this.cardslocalstorageService.getCards();
+    Object.assign(this.URLCardsCopy, this.URLCards);
   }
 
   shortURL(url: string) {
@@ -59,6 +62,19 @@ export class HomeComponent implements OnInit {
       if (element == card) this.URLCards.splice(index, 1);
     });
     this.cardslocalstorageService.removeCard(card);
+  }
+
+  sortCards() {
+    this.URLCards.reverse();
+    this.sortButton = !this.sortButton;
+  }
+
+  filterCards(event: any) {
+    this.URLCards = this.URLCardsCopy;
+    const searchTerm: string = event.detail.value;
+    this.URLCards = this.URLCards.filter((cards) => {
+      return cards.hostname.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+    });
   }
 
   toastSuccess() {

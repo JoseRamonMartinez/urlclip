@@ -89,3 +89,23 @@ q {
   display: flex;
   justify-content: right;
 }
+
+.filters {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  padding-right: 2%;
+  padding-left: 2%;
+  display: flex;
+  justify-content: right;
+}
+
+.searchbar {
+  padding-right: 15px;
+}
+
+.sort-button {
+  height: 40px;
+  display: flex;
+  padding-top: 10px;
+}

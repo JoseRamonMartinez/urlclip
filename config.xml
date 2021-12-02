@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.company.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>urlclip</name>
-  <description>A mobile app based on Ionic and Cordova.</description>
+  <description>URL shortener</description>
   <author email="dev@company.com" href="http://company.com">Development Team</author>
   <content src="index.html"/>
   <access origin="*"/>
