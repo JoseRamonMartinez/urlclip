@@ -63,6 +63,11 @@
       <ion-card-header color="primary">
         <ion-item color="primary" lines="none">
           <h2>{{ card.hostname }}</h2>
+          <div class="delete-button">
+            <ion-button fill="clear" (click)="deleteCard(card)">
+              <ion-icon size="medium" color="light" name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
         </ion-item>
       </ion-card-header>
       <ion-card-content>
