@@ -48,7 +48,8 @@
             type="text"
             (keyup.enter)="shortURL(inputURL)"
             [(ngModel)]="inputURL"
-          ></ion-input>
+          >
+          </ion-input>
           <ion-buttons item-end>
             <ion-button fill="solid" color="primary" shape="round" (click)="shortURL(inputURL)">
               <ion-icon size="large" color="light" name="cut-outline"></ion-icon>
@@ -60,8 +61,8 @@
 
     <div class="filters">
       <ion-searchbar (ionChange)="filterCards($event)" class="searchbar"></ion-searchbar>
-      <ion-button class="sort-button" (click)="sortCards()"
-        >Date
+      <ion-button (click)="sortCards()" class="sort-button">
+        Date
         <span [hidden]="sortButton">&uarr;</span>
         <span [hidden]="!sortButton">&darr;</span>
       </ion-button>
