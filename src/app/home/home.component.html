@@ -61,11 +61,13 @@
 
     <div class="filters">
       <ion-searchbar (ionChange)="filterCards($event)" class="searchbar"></ion-searchbar>
-      <ion-button (click)="sortCards()" class="sort-button">
-        Date
-        <span [hidden]="sortButton">&uarr;</span>
-        <span [hidden]="!sortButton">&darr;</span>
-      </ion-button>
+      <ion-buttons item-end>
+        <ion-button fill="solid" color="primary" (click)="sortCards()" class="sort-button">
+          Date
+          <span [hidden]="sortButton">&uarr;</span>
+          <span [hidden]="!sortButton">&darr;</span>
+        </ion-button>
+      </ion-buttons>
     </div>
 
     <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
