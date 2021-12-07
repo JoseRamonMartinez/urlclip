@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit {
         };
 
         this.URLCards.push(card);
+        this.URLCardsCopy.push(card);
         this.toastSuccess();
         this.cardslocalstorageService.saveCard(card);
         this.inputURL = '';
@@ -65,7 +66,7 @@ export class HomeComponent implements OnInit {
   }
 
   sortCards() {
-    this.URLCards.reverse();
+    this.URLCards = this.URLCards.reverse();
     this.sortButton = !this.sortButton;
   }
 
