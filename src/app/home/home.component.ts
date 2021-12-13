@@ -38,14 +38,11 @@ export class HomeComponent implements OnInit {
       this.shortenerService.postURL(url).subscribe((result: any) => {
         this.isLoading = false;
         let card: URLCard = {
-          hostname: result.url.match(
-            /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/
-          )[3],
+          hostname: result.url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/)[1],
           long_url: result.url,
           short_url: environment.serverUrl + '/' + result.code,
           created_at: result.created_at,
         };
-
         this.URLCards.push(card);
         this.URLCardsCopy.push(card);
         this.toastSuccess();
