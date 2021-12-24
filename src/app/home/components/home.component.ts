@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
     private cardslocalstorageService: CardsLocalStorageService,
     private toastService: ToastService,
     private translateService: TranslateService
-  ) {}
-
-  ngOnInit() {
+  ) {
     this.URLCards = this.cardslocalstorageService.getCards();
   }
+
+  ngOnInit() {}
 
   shortURL(url: string) {
     this.isLoading = true;
