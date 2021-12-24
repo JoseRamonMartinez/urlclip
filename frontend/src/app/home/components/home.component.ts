@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
     private shortenerService: ShortenerService,
     private cardslocalstorageService: CardsLocalStorageService,
     private toastService: ToastService,
-    private translateService: TranslateService
   ) {
     this.URLCards = this.cardslocalstorageService.getCards();
   }

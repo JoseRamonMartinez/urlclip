@@ -1,36 +1,36 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
+frontend/dist
+frontend/tmp
+frontend/out-tsc
 # Only exists if Bazel was run
-/bazel-out
+frontend/bazel-out
 
 # Dependencies
-/node_modules
+frontend/node_modules
 
 # Cordova
-/www
-/plugins
-/platforms
+frontend/www
+frontend/plugins
+frontend/platforms
 
 # Electron
-/dist-electron
-/dist-packages
-/electron.main.js
+frontend/dist-electron
+frontend/dist-packages
+frontend/electron.main.js
 
 # IDEs and editors
-.idea/*
-!.idea/runConfigurations/
-!.idea/codeStyleSettings.xml
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-xcuserdata/
-*.sublime-workspace
+frontend/.idea/*
+frontend/!.idea/runConfigurations/
+frontend/!.idea/codeStyleSettings.xml
+frontend/.project
+frontend/.classpath
+frontend/.c9/
+frontend/*.launch
+frontend/.settings/
+frontend/xcuserdata/
+frontend/*.sublime-workspace
 
 # IDE - VSCode
 .vscode/*
@@ -40,22 +40,38 @@ xcuserdata/
 !.vscode/extensions.json
 
 # Maven
-/target
-/log
+frontend/target
+frontend/log
 
 # Misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-/reports
-/src/translations/template.*
-/src/environments/.env.*
+frontend/.sass-cache
+frontend/connect.lock
+frontend/coverage
+frontend/libpeerconnection.log
+frontend/npm-debug.log
+frontendyarn-error.log
+frontend/testem.log
+frontend/typings
+frontend/reports
+frontend/src/translations/template.*
+frontend/src/environments/.env.*
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Binaries for programs and plugins
+backend/*.exe
+backend/*.exe~
+backend/*.dll
+backend/*.so
+backend/*.dylib
+
+# Test binary, built with `go test -c`
+backend/*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+backend/*.out
+
+#Environment
+backend/.env
