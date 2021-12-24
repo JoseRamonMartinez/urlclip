@@ -71,7 +71,7 @@
     </div>
 
     <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
-    <ion-card *ngFor="let card of URLCards | appFilter: searchCard">
+    <ion-card *ngFor="let card of URLCards.reverse() | appFilter: searchCard">
       <ion-card-header color="primary">
         <ion-item color="primary" lines="none">
           <h2>{{ card.hostname }}</h2>
