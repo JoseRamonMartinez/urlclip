@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
           short_url: environment.serverUrl + '/' + result.code,
           created_at: result.created_at,
         };
-        this.URLCards.push(card);
+        this.URLCards.unshift(card);
         this.cardslocalstorageService.saveCard(card);
         this.inputURL = '';
         this.toastService.presentToast('URL shorted 👍');
