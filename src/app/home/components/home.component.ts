@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
     this.sortButton = !this.sortButton;
   }
 
-  /*copyURL(val: string) {
+  copyURL(val: string) {
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -78,5 +78,5 @@ export class HomeComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-  }*/
+  }
 }

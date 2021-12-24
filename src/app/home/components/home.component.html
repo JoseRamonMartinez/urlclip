@@ -71,7 +71,7 @@
     </div>
 
     <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
-    <ion-card *ngFor="let card of URLCards.reverse() | appFilter: searchCard">
+    <ion-card *ngFor="let card of URLCards | appFilter: searchCard">
       <ion-card-header color="primary">
         <ion-item color="primary" lines="none">
           <h2>{{ card.hostname }}</h2>
@@ -85,11 +85,11 @@
       <ion-card-content>
         <ion-item>
           <a href="{{ card.short_url }}">{{ card.short_url }}</a>
-          <!-- <ion-buttons item-end>
+          <ion-buttons item-end>
             <ion-button (click)="copyURL(card.short_url)">
               <ion-icon size="large" color="primary" name="copy-outline"></ion-icon>
             </ion-button>
-          </ion-buttons> -->
+          </ion-buttons>
         </ion-item>
         <ion-item lines="none">
           <b><span translate>Redirect url:</span></b
