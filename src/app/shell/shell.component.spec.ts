@@ -8,7 +8,7 @@ import { I18nModule } from '@app/i18n';
 import { ShellComponent } from './shell.component';
 import { AboutComponent } from '@app/about/about.component';
 import { SettingsComponent } from '@app/settings/settings.component';
-import { HomeComponent } from '@app/home/home.component';
+import { HomeComponent } from '@app/home/components/home.component';
 import { HomeModule } from '@app/home/home.module';
 import { AboutModule } from '@app/about/about.module';
 import { SettingsModule } from '@app/settings/settings.module';

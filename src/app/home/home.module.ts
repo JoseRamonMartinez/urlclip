@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { SharedModule } from '@shared';
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './components/home.component';
 import { FormsModule } from '@angular/forms';
 import { I18nModule } from '@app/i18n';
 
