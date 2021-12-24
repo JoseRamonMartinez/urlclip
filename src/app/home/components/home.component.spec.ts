@@ -5,7 +5,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { SharedModule } from '@shared';
 import { HomeComponent } from './home.component';
-import { ShortenerService } from './shortener.service';
+import { ShortenerService } from '../services/shortener.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

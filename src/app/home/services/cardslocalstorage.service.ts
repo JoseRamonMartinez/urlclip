@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { URLCard } from './cards.model';
+import { URLCard } from '../models/cards.model';
 
 @Injectable({
   providedIn: 'root',

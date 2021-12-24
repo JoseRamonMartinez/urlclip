@@ -32,7 +32,7 @@ describe('ShortenerService', () => {
       };
 
       // Act
-      const ShortenerSubscription = shortenerService.postURL('http://www.google.com');
+      const ShortenerSubscription = shortenerService.saveURL('http://www.google.com');
 
       // Assert
       ShortenerSubscription.subscribe((shortener: any) => {

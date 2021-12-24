@@ -7,7 +7,7 @@
     </ion-buttons>
     <ion-title>
       <img width="25px" src="../../assets/ngx-rocket-logo.png" />
-      <span translate>URLCLIP</span></ion-title
+      <span translate>APP_NAME</span></ion-title
     >
   </ion-toolbar>
 </ion-header>
@@ -60,7 +60,7 @@
     </ion-card>
 
     <div class="filters">
-      <ion-searchbar (ionChange)="filterCards($event)" class="searchbar"></ion-searchbar>
+      <ion-searchbar [(ngModel)]="searchCard" class="searchbar"></ion-searchbar>
       <ion-buttons item-end>
         <ion-button fill="solid" color="primary" (click)="sortCards()" class="sort-button">
           Date
@@ -71,7 +71,7 @@
     </div>
 
     <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
-    <ion-card *ngFor="let card of URLCards.reverse()">
+    <ion-card *ngFor="let card of URLCards.reverse() | appFilter: searchCard">
       <ion-card-header color="primary">
         <ion-item color="primary" lines="none">
           <h2>{{ card.hostname }}</h2>

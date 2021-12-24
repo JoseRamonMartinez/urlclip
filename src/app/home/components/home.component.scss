@@ -16,9 +16,6 @@ q {
   display: flex;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  // padding-right: min(15px);
-  // padding-left: min(15px);
-
   padding-top: 1%;
   padding-bottom: 2%;
 }
@@ -32,8 +29,6 @@ q {
   display: flex;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  // padding-right: min(15px);
-  // padding-left: min(15px);
 }
 
 .home-description {
@@ -45,8 +40,6 @@ q {
   display: flex;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  // padding-right: min(15px);
-  // padding-left: min(15px);
 }
 
 .home-div {
@@ -72,7 +65,7 @@ q {
 }
 .home-bottom-shape {
   padding-top: 8%;
-  background-image: url("../../assets/circle.png");
+  background-image: url("../../../assets/circle.png");
   background-size: 33.25% 130%;
 }
 
