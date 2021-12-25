@@ -1,14 +1,13 @@
-name: Go
+name: ci-service-shortener
 
 on:
   pull_request:
-    branches:
-      - main
-    paths:
-      - backend/service-shortener/**
+    branches: [ main ]
+    paths: [ backend/service-shortener/** ]
+
 defaults:
   run:
-    working-directory: backend/service-shortener
+    working-directory: service-shortener 
 
 jobs:
 
