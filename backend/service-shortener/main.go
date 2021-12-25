@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"syscall"
 
-	h "microservice-shortener/api"
-	mr "microservice-shortener/repository/mongo"
+	h "service-shortener/api"
+	mr "service-shortener/repository/mongo"
 
-	"microservice-shortener/shortener"
+	"service-shortener/shortener"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

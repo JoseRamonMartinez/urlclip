@@ -8,8 +8,8 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/pkg/errors"
 
-	js "microservice-shortener/serializer/json"
-	"microservice-shortener/shortener"
+	js "service-shortener/serializer/json"
+	"service-shortener/shortener"
 )
 
 type RedirectHandler interface {

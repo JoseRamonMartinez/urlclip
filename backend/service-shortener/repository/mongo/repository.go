@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 
-	"microservice-shortener/shortener"
+	"service-shortener/shortener"
 )
 
 type mongoRepository struct {

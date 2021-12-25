@@ -2,7 +2,7 @@ package json
 
 import (
 	"fmt"
-	"microservice-shortener/shortener"
+	"service-shortener/shortener"
 	"testing"
 	"time"
 

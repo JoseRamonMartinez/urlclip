@@ -2,7 +2,7 @@ package json
 
 import (
 	"encoding/json"
-	"microservice-shortener/shortener"
+	"service-shortener/shortener"
 
 	"github.com/pkg/errors"
 )
