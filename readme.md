@@ -1,6 +1,6 @@
 <h2 align="center">URLCLIP</h2>
 <p align="center">
-    <img src="https://github.com/JoseRamonMartinez/urlclip/blob/main/frontend/src/assets/ngx-rocket-logo.png">
+    <img src="https://github.com/JoseRamonMartinez/urlclip/blob/main/frontend/src/assets/ngx-rocket-logo.png" width="50">
 </p>
 
 
