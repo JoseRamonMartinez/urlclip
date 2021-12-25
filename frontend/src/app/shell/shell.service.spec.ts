@@ -19,7 +19,7 @@ describe('Shell', () => {
       const result = Shell.childRoutes(testRoutes);
 
       // Assert
-      expect(result.path).toBe('tabs');
+      expect(result.path).toBe('');
       expect(result.children).toBe(testRoutes);
       expect(result.component).toBe(ShellComponent);
     });

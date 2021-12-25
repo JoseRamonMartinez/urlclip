@@ -58,6 +58,8 @@ frontend/src/environments/.env.*
 
 # System Files
 .DS_Store
+backend/.DS_Store
+frontend/.DS_Store
 Thumbs.db
 
 # Binaries for programs and plugins

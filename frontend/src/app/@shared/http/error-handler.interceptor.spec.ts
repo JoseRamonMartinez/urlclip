@@ -42,7 +42,7 @@ describe('ErrorHandlerInterceptor', () => {
     jest.spyOn(ErrorHandlerInterceptor.prototype as any, 'errorHandler');
 
     // Act
-    http.get('/toto').subscribe(
+    http.get('/').subscribe(
       () => fail('should error'),
       () => {
         // Assert

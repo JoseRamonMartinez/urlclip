@@ -10,9 +10,9 @@ describe('CardsModels', () => {
       short_url: 'https://urlclip.herokuapp.com/UKGY6_png',
       created_at: 1638269349,
     };
-    expect(URLCard.hostname).toBeInstanceOf(String);
-    expect(URLCard.long_url).toBeInstanceOf(String);
-    expect(URLCard.short_url).toBeInstanceOf(String);
-    expect(URLCard.created_at).toBeInstanceOf(Number);
+    expect(typeof URLCard.hostname).toBe("string");
+    expect(typeof URLCard.long_url).toBe("string");
+    expect(typeof URLCard.short_url).toBe("string");
+    expect(typeof URLCard.created_at).toBe("number");
   });
 });
