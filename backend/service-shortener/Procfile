@@ -1,1 +1,1 @@
-web: bin/microservice-shortener
+web: bin/service-shortener
