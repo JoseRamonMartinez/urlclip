@@ -1,0 +1,41 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: shortener-service
+spec:
+  selector:
+    app: shortener
+  type: LoadBalancer
+  ports:
+    - protocol: "TCP"
+      # Port accessible inside cluster
+      port: 8081
+      # Port to forward to inside the pod
+      targetPort: 8080
+      # Port accessible outside cluster
+      nodePort: 30001
+  type: LoadBalancer
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shortener-deployment
+spec:
+  selector:
+    matchLabels:
+      app: shortener
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: shortener
+    spec:
+      containers:
+        - name: shortener
+          image: joseramonmartinez/shortener:v1.0.0
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred

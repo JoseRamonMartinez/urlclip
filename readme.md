@@ -57,6 +57,7 @@ To get a local copy up and running follow these simple example steps.
     MONGO_URL=<mongo-conexion-chain>
     MONGO_DB=<mongo-database-name>
     MONGO_TIMEOUT=<timeout-time>
+    PORT=<port>
    ```
 
 ### Local deploy
@@ -70,6 +71,16 @@ To get a local copy up and running follow these simple example steps.
    cd backend/service-shortener
    go run main.go
    ```
+
+
+### Server containers with Docker
+1. Service shortener 
+   ```sh
+   docker build -t service-shortener
+   docker run -p 8080:8000 service-shortener
+   ```
+
+
 
 ## Author ✒️
 
