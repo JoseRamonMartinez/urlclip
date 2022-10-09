@@ -28,7 +28,7 @@
   "dependencies": {
     "@angular/animations": "^12.1.1",
     "@angular/common": "^12.1.1",
-    "@angular/compiler": "^12.1.1",
+    "@angular/compiler": "12.1.5",
     "@angular/core": "^12.1.1",
     "@angular/forms": "^12.1.1",
     "@angular/platform-browser": "^12.1.1",
@@ -67,7 +67,7 @@
     "@angular-eslint/schematics": "~12.3.1",
     "@angular-eslint/template-parser": "~12.3.1",
     "@angular/cli": "~12.1.1",
-    "@angular/compiler-cli": "~12.1.1",
+    "@angular/compiler-cli": "12.1.5",
     "@angular/language-service": "~12.1.1",
     "@biesbjerg/ngx-translate-extract": "^7.0.3",
     "@biesbjerg/ngx-translate-extract-marker": "^1.0.0",
