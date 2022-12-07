@@ -3,9 +3,11 @@
     <img src="https://github.com/JoseRamonMartinez/urlclip/blob/main/frontend/src/assets/ngx-rocket-logo.png" width="150">
 </p>
 
+<div align="center">
 
- [![ci-frontend](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-frontend.yml)[![ci-service-shortener](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-service-shortener.yml/badge.svg)](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-service-shortener.yml)   [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+ [![ci-frontend](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-frontend.yml)&nbsp;[![ci-service-shortener](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-service-shortener.yml/badge.svg)](https://github.com/JoseRamonMartinez/urlclip/actions/workflows/ci-service-shortener.yml)&nbsp;[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
+</div>
 
 ## Deployment 🚀
 
