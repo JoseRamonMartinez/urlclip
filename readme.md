@@ -11,7 +11,7 @@
 
 ## Deployment 🚀
 
-**[https://urlclip.herokuapp.com](https://urlclip.herokuapp.com)**
+**[https://urlclip.onrender.com/](https://urlclip.onrender.com/)**
 
 ## Description 📢
 
