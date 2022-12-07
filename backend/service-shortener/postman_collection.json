@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "e6e6d330-bde7-4db0-9cb4-28fe7f3c3806",
+		"name": "service-shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/hgTIMwK4g",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"hgTIMwK4g"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\": \"https://www.npmjs.com/package/@angular/platform-browser-dynamic/v/12.2.17\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
