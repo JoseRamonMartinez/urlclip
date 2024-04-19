@@ -1,10 +1,10 @@
 import { browser, ExpectedConditions as until } from 'protractor';
 import { AppSharedPage } from './page-objects/app-shared.po';
-import { ShellPage } from './page-objects/shell.po';
+import { HeaderPage } from './page-objects/shell.po';
 
 describe('when the app loads', () => {
   const app = new AppSharedPage();
-  const shell = new ShellPage();
+  const shell = new HeaderPage();
 
   beforeAll(async () => {
     await app.navigateAndSetLanguage();

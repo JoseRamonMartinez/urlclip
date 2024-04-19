@@ -8,12 +8,8 @@ import { Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
-
 import { environment } from '@env/environment';
-import { Logger, UntilDestroy, untilDestroyed } from '@shared';
-import { I18nService } from '@app/i18n';
-
-const log = new Logger('App');
+import { I18nService, UntilDestroy, untilDestroyed } from '@shared';
 
 @UntilDestroy()
 @Component({
@@ -35,19 +31,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
-    // Setup logger
-    if (environment.production) {
-      Logger.enableProductionMode();
-    }
-
-    log.debug('init');
-
-    // Setup translations
     this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
 
     const onNavigationEnd = this.router.events.pipe(filter((event) => event instanceof NavigationEnd));
 
-    // Change page title on navigation or language change, based on route data
     merge(this.translateService.onLangChange, onNavigationEnd)
       .pipe(
         map(() => {
@@ -68,7 +55,6 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       });
 
-    // Cordova platform and plugins initialization
     await this.platform.ready();
     this.onCordovaReady();
   }
@@ -78,10 +64,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private onCordovaReady() {
-    log.debug('device ready');
 
     if ((window as any).cordova) {
-      log.debug('Cordova init');
 
       this.keyboard.hideFormAccessoryBar(true);
       this.statusBar.styleLightContent();

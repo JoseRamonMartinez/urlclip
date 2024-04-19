@@ -5,7 +5,7 @@
 
 import { browser, element, by } from 'protractor';
 
-export class ShellPage {
+export class HeaderPage {
   welcomeText = element(by.css('app-root ion-card-title'));
 
   getParagraphText() {

@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from '@env/environment';
-import { ToastController } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
-import { ShortenerService } from '../services/shortener.service';
 import { URLCard } from '../models/cards.model';
 import { CardsLocalStorageService } from '../services/cardslocalstorage.service';
-import { ToastService } from '@app/@shared';
+import { ShortenerService } from '../services/shortener.service';
+import { ToastService } from '@shared';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   quote: string | undefined;
   isLoading = false;
   URLCards: URLCard[] = [];
@@ -29,12 +27,10 @@ export class HomeComponent implements OnInit {
     this.URLCards = this.cardslocalstorageService.getCards();
   }
 
-  ngOnInit() {}
-
   shortURL(url: string) {
     this.isLoading = true;
-    try {
-      this.shortenerService.saveURL(url).subscribe((result: any) => {
+    this.shortenerService.saveURL(url).subscribe({
+      next: (result: any) => {
         this.isLoading = false;
         let card: URLCard = {
           hostname: result.url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/)[1],
@@ -45,12 +41,13 @@ export class HomeComponent implements OnInit {
         this.URLCards.unshift(card);
         this.cardslocalstorageService.saveCard(card);
         this.inputURL = '';
-        this.toastService.presentToast('URL shorted 👍');
-      });
-    } finally {
-      this.isLoading = false;
-      this.toastService.presentToast('Something fails 👉👈');
-    }
+        this.toastService.presentToast('URL shorted successfully! 🎉');
+      },
+      error: () => {
+        this.isLoading = false;
+        this.toastService.presentToast('👉👈 Something went wrong. Please, try again in a few seconds ');
+      },
+    });
   }
 
   deleteCard(card: URLCard) {

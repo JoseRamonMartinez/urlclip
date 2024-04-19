@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TextFieldTypes } from '@ionic/core';
 import { AlertController } from '@ionic/angular';
@@ -6,11 +6,10 @@ import { AlertController } from '@ionic/angular';
 import { I18nService } from './i18n.service';
 
 @Component({
-  selector: 'app-language-selector',
-  templateUrl: './language-selector.component.html',
-  styleUrls: ['./language-selector.component.scss'],
+  selector: 'app-i18n',
+  templateUrl: './i18n.component.html',
 })
-export class LanguageSelectorComponent implements OnInit {
+export class I18nComponent {
   @Input() type = 'icon';
   @Input() itemClass = '';
 
@@ -19,8 +18,6 @@ export class LanguageSelectorComponent implements OnInit {
     private translateService: TranslateService,
     private i18nService: I18nService
   ) {}
-
-  ngOnInit() {}
 
   setLanguage(language: string) {
     this.i18nService.language = language;

@@ -9,11 +9,8 @@ import { IonicModule } from '@ionic/angular';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-
 import { environment } from '@env/environment';
 import { RouteReusableStrategy, ApiPrefixInterceptor, ErrorHandlerInterceptor, SharedModule } from '@shared';
-import { HomeModule } from './home/home.module';
-import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -27,9 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
     TranslateModule.forRoot(),
     IonicModule.forRoot(),
     SharedModule,
-    ShellModule,
-    HomeModule,
-    AppRoutingModule, // must be imported as the last module as it contains the fallback route
+    AppRoutingModule,
   ],
   declarations: [AppComponent],
   providers: [
